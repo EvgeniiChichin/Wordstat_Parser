@@ -1,0 +1,22 @@
+{% load static %}
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Логотип сайта">
+        </div>
+        <nav>
+            <ul class="nav-list">
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'home' %}">Домашняя страница</a></li>
+                    <li><a href="{% url 'upload' %}">Загрузить</a></li>
+                    <li><a href="{% url 'set_yandex_cookies' %}">Установка Yandex Cookies</a></li>
+                    <li><a href="{% url 'profile_view' %}">Личный кабинет</a></li>
+                    <li><a href="{% url 'logout' %}">Выход</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Вход в аккаунт</a></li>
+                    <li><a href="{% url 'register' %}">Регистрация</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</header>

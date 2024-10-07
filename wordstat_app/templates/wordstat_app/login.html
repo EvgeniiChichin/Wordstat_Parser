@@ -1,0 +1,36 @@
+{% extends 'wordstat_app/base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-form">
+        <h2>Вход</h2>
+        {% if form.errors %}
+        <div class="error-message">
+            <p>Неправильный Email или пароль. Пожалуйста, попробуйте снова.</p>
+        </div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Войти</button>
+        </form>
+        <div class="login-links">
+            <p>Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a></p>
+            <p>Забыли пароль? <a href="{% url 'password_reset' %}">Восстановить пароль</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

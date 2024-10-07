@@ -1,0 +1,79 @@
+{% extends 'wordstat_app/base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Установка Яндекс Cookies
+{% endblock %}
+
+{% block content %}
+  <div class="home-container">
+    <h1 class="page-title">Установка Yandex Cookies</h1>
+
+    <div class="instruction-container">
+      <p class="upload-info">Для корректной работы приложения необходимо добавить ваши Yandex Cookies. <br> Пожалуйста, следуйте приведенной ниже инструкции.</p>
+
+      <h2 class="instruction-title">Почему это важно?</h2>
+      <p>Использование личного аккаунта Яндекс гарантирует надежный доступ к сервису и предотвращает возможные проблемы, связанные с многократным использованием одних и тех же данных. Если несколько человек используют один и тот же аккаунт для запуска программы, это может привести к блокировке или ограничению доступа со стороны Яндекс.</p>
+
+      <h2 class="instruction-title">Инструкция по получению куки</h2>
+      <ol class="instruction-list">
+        <li class="instruction-step">
+          <h3>Шаг 1: Откройте сайт Яндекс Wordstat</h3>
+          <p>Перейдите на сайт Яндекс <a href="https://wordstat.yandex.ru/" target="_blank" rel="noopener noreferrer">Wordstat</a>.</p>
+        </li>
+        <li class="instruction-step">
+          <h3>Шаг 2: Откройте инструменты разработчика</h3>
+          <p>Нажмите правую кнопку мыши на странице и выберите <strong>Посмотреть код</strong> (или <strong>Исследовать</strong>).</p>
+          <div class="img-container">
+            <img src="{% static 'images/step1.jpeg' %}" alt="Нажмите правую кнопку мыши и выберите Инспектор" />
+          </div>
+        </li>
+        <li class="instruction-step">
+          <h3>Шаг 3: Перейдите на вкладку Application</h3>
+          <p>Перейдите на вкладку <strong>Application</strong> (или <strong>Хранилище</strong>) в панели инструментов разработчика.</p>
+          <div class="img-container">
+            <img src="{% static 'images/step2.jpeg' %}" alt="Перейдите на вкладку Storage" />
+          </div>
+        </li>
+        <li class="instruction-step">
+          <h3>Шаг 4: Найдите куки</h3>
+          <p>Выберите <strong>Cookies</strong> и найдите куки для сайта Яндекс Вордстат. Обратите внимание на значения <strong>Session ID</strong> и <strong>YandexUID</strong>. Скопируйте эти значения и вставьте их в форму ниже.</p>
+          <div class="img-container">
+            <img src="{% static 'images/step3.jpeg' %}" alt="Выберите Cookies" />
+            <img src="{% static 'images/step4.jpeg' %}" alt="Выберите Cookies" />
+          </div>
+        </li>
+        <li class="instruction-step">
+          <h3>Шаг 5: Вставьте значения куки</h3>
+          <p>Скопируйте необходимые значения и вставьте их в форму ниже.</p>
+        </li>
+      </ol>
+
+      <h2 class="instruction-title">Пример значений куки</h2>
+      <p>Обратите внимание, что значение куки session_id может различаться в зависимости от используемого браузера. Приведенные ниже примеры демонстрируют возможные форматы значений куки и предназначены только для иллюстрации:</p>
+      <div class="cookie-examples">
+        <div class="img-container">
+          <img src="{% static 'images/step5.jpeg' %}" alt="Пример значений куки" />
+        </div>
+      </div>
+      <p>Эти примеры помогут вам понять, как могут выглядеть значения куки, но они не могут быть использованы напрямую. Пожалуйста, используйте свои собственные значения session_id и yandexuid, которые вы получите, следуя инструкциям выше.</p>
+
+      <h2 class="instruction-title">Форма для ввода куки</h2>
+      <form method="post" class="cookies-form">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="id_session_id">Session ID:</label>
+          <input type="text" name="session_id" id="id_session_id" placeholder="Введите значение session_id" required />
+        </div>
+
+        <div class="form-group">
+          <label for="id_yandexuid">YandexUID:</label>
+          <input type="text" name="yandexuid" id="id_yandexuid" placeholder="Введите значение yandexuid" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary save-button large-button">Сохранить</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

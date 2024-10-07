@@ -1,0 +1,25 @@
+{% extends 'wordstat_app/base.html' %}
+{% load static %}
+
+{% block title %}
+  Проверка Яндекс Cookies
+{% endblock %}
+
+{% block content %}
+  <div class="home-container">
+    <h1 class="page-title">Проверка Яндекс Cookies</h1>
+
+    <div class="instruction-container">
+      <p class="upload-info">Пожалуйста, подождите, идет проверка куки Яндекса...</p>
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Загрузка...</span>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    setTimeout(function() {
+        window.location.reload(1);
+    }, 5000);
+  </script>
+{% endblock %}

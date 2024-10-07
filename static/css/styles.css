@@ -1,0 +1,331 @@
+/* Основные стили для body */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 20px;
+}
+
+/* Стили для контента */
+.content {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Общие стили для форм */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="number"],
+form input[type="file"],
+form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.save-button {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+form button:hover {
+    background-color: #4cae4c;
+}
+
+/* Стили для плашек сообщений */
+.messages {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    z-index: 1000;
+}
+
+.alert {
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #dff0d8;
+    border: 1px solid #d0e9c6;
+    color: #3c763d;
+}
+
+.alert-error {
+    color: red;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+/* Основные стили для главной страницы */
+.home-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.welcome-message {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.instruction-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.instruction-title {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.instruction-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.instruction-step {
+    margin-bottom: 25px;
+}
+
+.instruction-step h3 {
+    color: #007bff;
+}
+
+.img-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.upload-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.upload-info {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 4px solid #ffc107;
+    background-color: #fff3cd;
+    border-radius: 4px;
+}
+
+.upload-info p {
+    margin: 0;
+}
+
+.custom-file-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.custom-file-label::after {
+    content: "Обзор";
+}
+
+/* Переопределяем стили Bootstrap для fieldset */
+fieldset {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    margin-top: 20px;
+    display: block;
+}
+
+legend {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* Стили для кнопок */
+.upload-button,
+.download-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.upload-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.upload-button:hover {
+    background-color: #218838;
+}
+
+.download-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.download-button:hover {
+    background-color: #0069d9;
+}
+
+.upload-button i,
+.download-button i {
+    margin-right: 10px;
+}
+
+#status {
+    margin-top: 30px;
+}
+
+.period-fieldset {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.period-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.period-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.large-button {
+    font-size: 1.3em;
+    padding: 15px 30px;
+    width: auto;
+    min-width: 250px;
+    margin-top: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn.large-button {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.btn.large-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.btn.large-button:active {
+    transform: translateY(1px);
+}
+
+.page-title {
+    margin-top: 30px; /* Отступ сверху */
+    margin-bottom: 30px; /* Отступ снизу */
+    text-align: center; /* Выравнивание по центру */
+    font-size: 40px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+}
+
+.btn-warning {
+    background-color: #ffc107; /* Оранжевый цвет */
+    color: white;
+  }
+  
+  .btn-warning:hover {
+    background-color: #ffc107; /*  Более темный оранжевый при наведении */
+  }
+  
+
+  

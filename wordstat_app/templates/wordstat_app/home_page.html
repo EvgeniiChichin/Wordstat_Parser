@@ -1,0 +1,59 @@
+{% extends 'wordstat_app/base.html' %}
+{% load static %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <h1 class="page-title">Добро пожаловать, {{ user.username }}!</h1>
+
+    <div class="instruction-container">
+        <h2 class="instruction-title">Инструкция по использованию</h2>
+
+        <p>Чтобы начать работу, выполните следующие шаги:</p>
+
+        <ol class="instruction-list">
+            <li class="instruction-step">
+                <h3>Шаг 1: Выберите файл Excel</h3>
+                <p>Нажмите на кнопку "Обзор" и выберите файл Excel с данными для обработки.</p>
+                <div class="img-container">
+                    <img src="{% static 'images/instructions1.jpeg' %}" alt="Выбор файла">
+                </div>
+            </li>
+
+            <li class="instruction-step">
+                <h3>Шаг 2: Укажите имя листа</h3>
+                <p>Введите имя листа в вашем файле Excel, который содержит данные для обработки. Имя листа должно совпадать с тем, что указано в файле.</p>
+                <div class="img-container">
+                    <img src="{% static 'images/instructions.jpeg' %}" alt="Имя листа">
+                </div>
+            </li>
+
+            <li class="instruction-step">
+                <h3>Шаг 3: Укажите годы и месяцы</h3>
+                <p>Введите год и месяц начала и окончания периода, для которого нужно провести анализ данных.</p>
+                <div class="img-container">
+                    <img src="{% static 'images/instructions3.jpeg' %}" alt="Выбор периода">
+                </div>
+            </li>
+
+            <li class="instruction-step">
+                <h3>Шаг 4: Укажите начальную строку и столбцы</h3>
+                <p>Укажите начальную строку и номера столбцов для обработки данных:</p>
+                <ul>
+                    <li><strong>Начальная строка:</strong> Укажите номер строки, с которой начнется обработка данных. Нумерация начинается с 1, но программа пропускает заголовок.</li>
+                    <li><strong>Столбец с запросами:</strong> Укажите букву столбца, содержащего запросы для передачи в Яндекс Wordstat.</li>
+                    <li><strong>Столбец для результатов:</strong> Укажите букву столбца, в который будут записаны результаты поиска.</li>
+                </ul>
+                <div class="img-container">
+                    <img src="{% static 'images/instructions4.jpeg' %}" alt="Начальная строка и столбцы">
+                </div>
+            </li>
+        </ol>
+
+        <p>После заполнения всех полей, нажмите кнопку "Загрузить и обработать", чтобы отправить файл на сервер и получить результаты анализа.</p>
+
+        <a href="{% url 'upload' %}" class="btn btn-primary save-button large-button">Перейти к загрузке файла</a>
+    </div>
+</div>
+{% endblock %}
